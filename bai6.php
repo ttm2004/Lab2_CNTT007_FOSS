@@ -24,20 +24,32 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Tìm số lớn hơn</title>
 </head>
 <body>
-    <!-- Form tìm số lớn hơn -->
-    <h1>Tìm số lớn hơn</h1>
-    <form method="post" action="">
-        <label for="a">Số thứ nhất:</label>
-        <input type="number" id="a" name="a" value="<?php echo $_POST['a'] ?? '';?>" required>
-        <label for="b">Số thứ hai:</label>
-        <input type="number" id="b" name="b" value="<?php echo $_POST['b'] ?? '';?>" required>
-        <label for="solonhon">Số lớn hơn:</label>
-        <h2>Số lớn hơn: <?php echo '' . $result ?? '';?></h2>
-        <input type="submit" value="Tìm số lớn hơn">
-    </form>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow p-4" style="width:350px;">
+        <h4 class="text-center mb-3">Tìm số lớn hơn</h4>
+
+        <form action="" method="post">
+            <div class="mb-3">
+                <label for="a" class="form-label">Số thứ nhất:</label>
+                <input type="number" class="form-control" id="a" name="a" value="<?php echo $_POST['a'] ?? '';?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="b" class="form-label">Số thứ hai:</label>
+                <input type="number" class="form-control" id="b" name="b" value="<?php echo $_POST['b'] ?? '';?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="solonhon" class="form-label">Số lớn hơn:</label>
+                <input type="text" class="form-control" id="solonhon" name="solonhon" value="<?php echo $result;?>" readonly>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Tìm</button>
+            
+        </form>
+        </div>
+    </div>
 
 </body>
 </html>
